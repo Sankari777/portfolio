@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sankari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <img src="myimage.JPG" alt="Sankari's Profile Photo" class="profile-photo">
+            <h1 class="fade-in">Sankari</h1>
+            <h2 class="slide-in">Web Designer & Developer</h2>
+            <p class="tagline">Transforming Ideas into Interactive Designs</p>
+            <a href="#projects" class="btn hover-effect">View My Work</a>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="fade-in">About Me</h2>
+            <p class="slide-in">
+                Hi, I'm Sankari, a passionate web designer and developer with a strong foundation in HTML, CSS, JavaScript, and Python. My journey began as a Computer Science and Engineering student, where I discovered my love for creating interactive and visually appealing websites.
+            </p>
+            <p class="slide-in">
+                Over the years, I’ve honed my skills through various projects and achievements:
+            </p>
+            <ul>
+                <li class="fade-in"><strong>Science Day Project:</strong> Led a team to develop a voice-controlled robot, which won second prize for innovation and functionality.</li>
+                <li class="fade-in"><strong>Naan Mudhalvan Initiative:</strong> Built a Salesforce app titled <em>“Supply Leftover Food to Poor”</em>, addressing food waste and hunger.</li>
+            </ul>
+            <p class="fade-in">
+                My goal is to create meaningful web experiences that solve real-world problems and inspire users. I’m continuously learning and excited to bring ideas to life through code and design.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="fade-in">My Projects</h2>
+
+            <div class="project fade-in">
+                <h3>Food Website</h3>
+                <p>
+                    A visually stunning and interactive food website featuring sections like Non-Veg Pizza and Veg Pizza. Highlights include menu items such as BBQ Chicken Pizza, Pepperoni Pizza, Paneer Pizza, and Mushroom Pizza. Designed with an intuitive user interface for a seamless browsing experience.
+                </p>
+                <a href="https://sankari777.github.io/FoodieNest/" class="btn hover-effect" target="_blank">View Project</a>
+            </div>
+
+            <div class="project fade-in">
+                <h3>Salesforce App</h3>
+                <p>
+                    Developed a Salesforce app titled <em>“Supply Leftover Food to Poor”</em>, aimed at reducing food waste and addressing hunger. The app connects food donors with NGOs, features real-time tracking, and ensures efficient distribution of resources.
+                </p>
+                <a href="https://github.com/yourusername/SalesforceApp" class="btn hover-effect" target="_blank">View Project</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2 class="fade-in">Resume</h2>
+            <p>Download a PDF copy of my resume to learn more about my experience and skills.</p>
+            <a href="Resume.pdf" class="btn hover-effect" download>Download Resume</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="fade-in">Contact Me</h2>
+            <p>If you have any questions or want to work together, feel free to reach out!</p>
+            <form action="https://formspree.io/f/xzzzevpq" method="POST" class="fade-in">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="btn hover-effect">Send Message</button>
+            </form>
+            <div class="social-links fade-in">
+                <p>Or connect with me on:</p>
+                <a href="https://www.linkedin.com/in/sankari-a-8441b4252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Sankari777" target="_blank">GitHub</a>
+                <a href="https://twitter.com/Siva200419" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fade-in Effect
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const slideInElements = document.querySelectorAll('.slide-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeInElements.forEach(el => observer.observe(el));
+        slideInElements.forEach(el => observer.observe(el));
+
+        // Button Hover Animation
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.classList.add('hovering');
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.classList.remove('hovering');
+            });
+        });
+    </script>
+</body>
+</html>
